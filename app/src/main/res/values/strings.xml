@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">RemotePleasure</string>
+
+    <string name="title_error">Error occurred</string>
+    <string name="placeholder_unknown_error">To resolve this issue contact the support. %s</string>
+
 </resources>
