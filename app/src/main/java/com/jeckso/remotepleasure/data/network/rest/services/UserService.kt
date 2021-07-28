@@ -18,7 +18,7 @@ interface UserService: BaseService {
     suspend fun createUser(user: JsonObject): JsonObject
 
     @GET(ENDPOINT)
-    suspend fun getUsers(user: JsonObject): JsonArray
+    suspend fun getUsers(): JsonArray
 
     @GET("$ENDPOINT/${KEY_ID}")
     suspend fun getUserById(@Path(KEY_ID) id: String): JsonObject

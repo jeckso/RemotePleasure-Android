@@ -48,7 +48,6 @@ abstract class BaseViewModel : ViewModel() {
     val errorState: Flow<Failure> = _errorState
 
     val shouldShowProgress: Flow<Boolean> = _shouldShowProgress.transform {
-        Timber.e("$it ${_activeTasks}")
         emit(it or _activeTasks.isNotEmpty())
     }.distinctUntilChanged()
 
