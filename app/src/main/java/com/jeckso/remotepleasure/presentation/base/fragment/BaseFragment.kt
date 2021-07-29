@@ -170,8 +170,7 @@ abstract class BaseFragment<VM : BaseViewModel, VB : ViewBinding> : Fragment() {
         childFragmentManager.fragments.forEach { it.onHiddenChanged(hidden) }
     }
 
-    private fun shouldShowProgress(isVisible: Boolean) {
-        Timber.e("$this $isVisible")
+    protected open fun shouldShowProgress(isVisible: Boolean) {
         (requireActivity() as? BaseActivity<*, *>)?.shouldShowProgress(isVisible)
     }
 }
