@@ -29,6 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="text"
+            android:minHeight="@dimen/margin_48"
             android:padding="@dimen/padding_3"
             tools:text="test@gmail.com" />
 
