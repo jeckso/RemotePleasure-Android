@@ -2,11 +2,10 @@ package com.jeckso.remotepleasure.data.network.rest.services
 
 import com.google.gson.JsonArray
 import com.google.gson.JsonObject
+import com.jeckso.remotepleasure.data.network.rest.model.auth.AuthResponse
+import com.jeckso.remotepleasure.data.network.rest.model.auth.BaseAuthRequest
 import com.jeckso.remotepleasure.data.network.rest.services.BaseService.Companion.KEY_ID
-import retrofit2.http.DELETE
-import retrofit2.http.GET
-import retrofit2.http.POST
-import retrofit2.http.Path
+import retrofit2.http.*
 
 interface UserService: BaseService {
 
@@ -15,7 +14,7 @@ interface UserService: BaseService {
     }
 
     @POST(ENDPOINT)
-    suspend fun createUser(user: JsonObject): JsonObject
+    suspend fun createUser(@Body baseAuthRequest: BaseAuthRequest): AuthResponse
 
     @GET(ENDPOINT)
     suspend fun getUsers(user: JsonObject): JsonArray
